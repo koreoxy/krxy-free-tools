@@ -19,6 +19,7 @@ import {
   ChevronDown,
   Wrench,
   FileText,
+  Calendar,
 } from "lucide-react";
 
 import {
@@ -187,6 +188,18 @@ export default function Sidebar() {
                 ))}
               </CollapsibleContent>
             </Collapsible>
+            <Link
+              href="/calendar"
+              onClick={() => setIsOpen(false)}
+              className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm transition-colors ${
+                pathname.startsWith("/calendar")
+                  ? "bg-sidebar-primary text-sidebar-primary-foreground"
+                  : "text-sidebar-foreground hover:bg-sidebar-accent"
+              }`}
+            >
+              <Calendar size={20} />
+              Kalender
+            </Link>
 
             <Link
               href="/about"
